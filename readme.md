@@ -1,4 +1,4 @@
-## rust
+## Rust
 
 > https://www.rust-lang.org/tools/install
 
@@ -172,3 +172,16 @@ index.js:39 wasm -->  12586269025n
 index.js:40 default: 138319.74877929688 ms
 index.js:42 -----------------------
 ```
+
+## 实战例子
+
+> 场景：截取视频某一秒并以图片展示
+
+- js 版本：https://github.com/Liuhongwei3/video-snapshot
+- wasm 版本：https://github.com/Liuhongwei3/web-capture
+
+实际效果：
+
+结论：尝试多次截取情况下，wasm 版本至少有 70% 的用例会比 js 版本快至少 100%（160ms --- 330ms），并且 js 版本会在尝试多次后会有一些卡帧情况
+
+可以发现并没有 100% 情况更快，还是因为 wasm js 通信会存在一定的时间消耗
